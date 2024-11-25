@@ -1,12 +1,8 @@
-@extends('layouts.clean')
-   
-   @section('childContent')
-
+<x-base-layout title="Home" bodyClass="page-home">
     @include('layouts.partials.header')
 
-     @yield('content')
+    {{ $slot }}
 
     @include('layouts.partials.footer')
-
-@endsection
-    
+</x-base-layout>
+ 
