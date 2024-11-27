@@ -3,6 +3,7 @@
 
     {{ $slot }}
 
-    @include('layouts.partials.footer')
+    
+
 </x-base-layout>
  
