@@ -26,10 +26,12 @@ return new class extends Migration
             $table->integer('price');
             $table->string('vin');
             $table->longText('description')->nullable(  );
+            $table->timestamp('published_at')->nullable();
             $table->string('image',45);
             $table->string('address',255);
             $table->string('phone',45);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

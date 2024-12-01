@@ -99,7 +99,7 @@
         <div class="container">
           <h2>Latest Added Cars</h2>
           <div class="car-items-listing">
-            @for ($i=0; $i < 15; $i++)
+            @for ($i=0; $i < $cars->count(); $i++)
               <x-car-item />
             @endfor
           </div>

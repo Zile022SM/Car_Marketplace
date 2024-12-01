@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('states', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',45);
-            $table->timestamps();
+        Schema::table('cars', function (Blueprint $table) {
+            $table->timestamp('published_at')->nullable()->after('description');
         });
     }
 
@@ -22,7 +20,9 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    { 
-        Schema::dropIfExists('states');
+    {
+        Schema::table('cars', function (Blueprint $table) {
+            $table->dropColumn('published_at');
+        });
     }
 };
