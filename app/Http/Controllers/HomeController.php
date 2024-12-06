@@ -9,10 +9,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $cars= Car::get();
+        
+        $car = Car::findOrFail(1);
 
-        $title = 'Home';
-        return view('home.home', compact('title', 'cars'));
+        dd($car->carType);
+
+        return view('home.home', compact('title', 'car'));
     }
 
     
