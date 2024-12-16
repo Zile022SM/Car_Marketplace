@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Car;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Maker;
+
 
 class Model extends BaseModel
 {
@@ -20,5 +23,9 @@ class Model extends BaseModel
 
     public function cars():HasMany{
         return $this->hasMany(Car::class);
+    }
+
+    public function maker():BelongsTo{
+        return $this->belongsTo(Maker::class);
     }
 }

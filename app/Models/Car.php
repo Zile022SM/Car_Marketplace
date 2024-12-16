@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\CarFeature;
 
 class Car extends Model
 {
@@ -31,6 +32,9 @@ class Car extends Model
         'image',
         'published_at',
     ];
+
+    public $timestamps = false;
+
 
     public function features():HasOne {
         return $this->hasOne(CarFeature::class);
