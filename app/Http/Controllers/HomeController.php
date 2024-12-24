@@ -14,11 +14,13 @@ class HomeController extends Controller
         
        $cars= Car::where('published_at', '<', now())->orderBy('published_at', 'desc')->limit(30)->get();
 
+       $prices = Car::orderBy('price', 'desc')->pluck('price','id');
+
        $title = 'Home';
 
        //dd($cars);
 
-        return view('home.home', compact('title', 'cars'));
+       return view('home.home', compact('title', 'cars'));
     }
 
     
