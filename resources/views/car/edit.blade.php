@@ -1,7 +1,7 @@
 <x-app-layout>
     <main>
       <div class="container-small">
-        <h1 class="car-details-page-title">Add new car</h1>
+        <h1 class="car-details-page-title">Edit car</h1>
         <form
           action=""
           method="POST"
